@@ -1,0 +1,11 @@
+﻿@{
+    ViewData["Title"] = "User Profile";
+}
+
+<h1 class="mt-4 HeaderStyling">@User.Identity.Name's User profile</h1>
+
+<div class="row">
+    <a class="btn btn-primary mt-4" asp-controller="Account" asp-action="GetEditUserInfoByUsername" asp-route-username="@User.Identity.Name">👤 User Info 👤</a>
+    <a class="btn btn-primary mt-4" asp-controller="Account" asp-action="GetEditUserAddressByUsername" asp-route-username="@User.Identity.Name">🏠 Address 🏠</a>
+    <a class="btn btn-primary mt-4" asp-controller="Account" asp-action="GetChangePasswordRequestByUsername" asp-route-username="@User.Identity.Name">💾 Change Password 💾</a>
+</div>

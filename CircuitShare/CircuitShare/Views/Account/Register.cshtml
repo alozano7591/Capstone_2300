@@ -1,0 +1,71 @@
+﻿@model RegisterViewModel
+
+@{
+    ViewData["Title"] = "Register";
+}
+
+<!--
+<div id="react-content-RegisterForm">
+</div>
+
+<script src="~/js/RegisterForm.jsx"></script>
+ -->
+<img class="imageLogo" src="/img/Share.png" alt="CircuitShare Logo" />
+<div class="login-form-container formAlign">
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<form method="post" asp-controller="Account" asp-action="Register">
+
+    <div class="form-group row">
+        <div class=""><label>Email:</label></div>
+        <div class="">
+            <input asp-for="Email" class="form-control" />
+        </div>
+        <div class="col">
+            <span asp-validation-for="Email"
+                  class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <div class=""><label>Username:</label></div>
+        <div class="">
+            <input asp-for="Username" class="form-control" />
+        </div>
+        <div class="col">
+            <span asp-validation-for="Username"
+                  class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <div class=""><label>Password:</label></div>
+        <div class="">
+            <input type="password" asp-for="Password"
+                   class="form-control" />
+        </div>
+        <div class="col">
+            <span asp-validation-for="Password"
+                  class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class=""><label>Confirm Password:</label></div>
+        <div class="">
+            <input type="password" asp-for="ConfirmPassword"
+                   class="form-control" />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="">
+            <button type="submit" class="btn btn-primary">Register</button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="">
+            Already registered? <a asp-action="LogIn">Log In</a>
+        </div>
+    </div>
+</form>
+</div>

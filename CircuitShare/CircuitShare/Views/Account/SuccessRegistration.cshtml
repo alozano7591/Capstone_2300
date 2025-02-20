@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "Registration Successfull";
+}
+
+<h1 class="HeaderStyling">Successful Registration!</h1>
+<br />
+
+<p style="font-size: 20px; font-weight: bold">
+    Please check your email for the verification link.
+</p>
+
+<p style="font-size: 20px; font-weight: bold">
+    Here is your <a class="btn btn-info" href="@(ViewBag.EmailConfirmationLink)">email confirmation link!</a>
+</p>
+
+<div class="road-container">
+    <div class="lane"></div>
+    <div class="middle-line"></div>
+    <div class="lane"></div>
+</div>
+
+
+<img className="imageLogo" src="/img/Share.png" alt="CircuitShare Logo" />

@@ -1,0 +1,214 @@
+.headerColoring {
+    background-color: black;
+    color: snow;
+}
+
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    margin: 0;
+    padding: 20px;
+}
+
+.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
+    color: var(--bs-secondary-color);
+    text-align: end;
+}
+
+.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
+    text-align: start;
+}
+
+
+body {
+    background-color: #f97034;
+    font-family: Arial, sans-serif;
+}
+
+.login-form-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.btn-primary {
+    background-color: snow;
+    border-color: black;
+    color: black;
+}
+
+.btn-primary:hover {
+    background-color: #f97034;
+    border-color: snow;
+}
+
+a {
+    color: #007BFF;
+}
+
+a:hover {
+        text-decoration: underline;
+}
+
+input.form-control {
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 8px;
+    outline: none;
+}
+
+input.form-control:focus {
+        border-color: #007BFF;
+        box-shadow: 0 0 5px rgba(0,123,255,0.5);
+}
+
+.imageLogo {
+    text-align: center;
+}
+
+.container {
+    text-align: center;
+}
+
+.container img {
+        display: inline-block;
+}
+
+form {
+    text-align: center;
+}
+
+
+.charger-container a {
+    color: white;
+}
+
+.charger-container a:hover {
+        color: black;
+}
+
+.charger-container {
+    display: grid;
+    grid-template-columns: auto-fit;
+    gap: 30px;
+    padding: 20px;
+}
+
+.charger-card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    margin: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    color: #333;
+    position: relative;
+    overflow: hidden;
+}
+
+.charger-card:hover {
+   transform: translateY(-5px);
+   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.charger-card h3 {
+        color: #f97034;
+        margin: 0 0 15px 0;
+        font-size: 1.5em;
+}
+
+.charger-card p {
+    margin: 8px 0;
+    line-height: 1.4;
+}
+
+.hourly-rate {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.text-center {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/*Road*/
+
+.road-container {
+    width: 80%;
+    height: 50px;
+    margin: 20px auto 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.lane {
+    position: absolute;
+    width: 100%;
+    height: 10px;
+    background: #333;
+}
+
+.lane:first-child {
+    top: 10px;
+    transform: rotate(180deg);
+}
+
+.lane:last-child {
+   bottom: 10px;
+}
+
+.middle-line {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 0;
+    border-top: 4px dashed #f1c40f;
+}
+
+/*---------------*/
+
+.HeaderStyling{
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.TitleStyle {
+    font-size: 20px; 
+    font-weight: bold;
+}
+
+.spacer {
+    margin-bottom: 20px; /* Adjust the value as needed */
+}
+

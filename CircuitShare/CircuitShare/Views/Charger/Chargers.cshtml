@@ -1,0 +1,29 @@
+﻿@model ChargerViewModel
+
+
+
+<div class="text-center">
+	<h1 class="display-4" style="text-decoration: underline; font-weight: bold">Check out our chargers!</h1>
+
+	<div class="charger-container">
+		@{
+			foreach (var charger in Model.Chargers)
+			{
+				<div data-aos="zoom-in"class="charger-card" >
+					<h3>@charger.Name</h3>
+					<!--<a asp-controller="Charger" asp-action="GetChargerAsync" asp-route-id="@charger.ChargerId"><h3>@charger.Name</h3></a>-->
+					<p>$@charger.HourlyRate per hour</p>
+					<p>@charger.Description</p>
+				</div>
+
+				<!--<a asp-controller="Charger" asp-action="GetChargerAsync" asp-route-id="@charger.ChargerId">
+				</a>-->
+				<div data-aos="zoom-in" class="road-container">
+					<div class="lane"></div>
+					<div class="middle-line"></div>
+					<div class="lane"></div>
+				</div>
+			}
+		}
+	</div>
+</div>

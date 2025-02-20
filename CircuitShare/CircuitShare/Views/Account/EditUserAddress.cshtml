@@ -1,0 +1,111 @@
+﻿@model CircuitShare.Models.UserAddressViewModel
+@{
+    ViewData["Title"] = "User Address";
+    bool shippingSameAsBilling = Model.ShippingSameAsBilling;
+}
+
+<h2 class="TitleStyle" style="font-size: 50px; text-decoration: underline">@ViewData["Title"]</h2>
+<div class="road-container">
+    <div class="lane"></div>
+    <div class="middle-line"></div>
+    <div class="lane"></div>
+</div>
+
+<a asp-controller="Account" asp-action="GetUserProfile" asp-route-username="@User.Identity.Name" class="btn btn-primary">Back</a>
+
+<br />
+<br />
+
+@if (Model.ShowSaveMessage)
+{
+    <p style="color:green">Address Info Saved!</p>
+}
+
+<form asp-controller="Account" asp-action="ProcessUserAddressEdit" asp-route-username="@User.Identity.Name" method="post">
+
+    <h3 class="TitleStyle" style="font-size: 30px; text-decoration: underline">Billing Address</h3>
+    <div class="road-container">
+        <div class="lane"></div>
+        <div class="middle-line"></div>
+        <div class="lane"></div>
+    </div>
+
+    <div class="row login-form-container formAlign">
+        <div class="form-group ">
+            <label asp-for="FirstName">First Name*</label>
+            <input asp-for="FirstName" class="form-control" />
+            <span asp-validation-for="FirstName" class="text-danger"></span>
+        </div>
+
+        <div class="form-group ">
+            <label asp-for="LastName">Last Name*</label>
+            <input asp-for="LastName" class="form-control" />
+            <span asp-validation-for="LastName" class="text-danger"></span>
+        </div>
+
+        <div class="form-group ">
+            <label asp-for="PhoneNumber">Phone Number</label>
+            <input asp-for="PhoneNumber" class="form-control" />
+            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="row login-form-container formAlign">
+        <div class="form-group">
+            <label asp-for="StreetAddress">Street Address*</label>
+            <input asp-for="StreetAddress" class="form-control" />
+            <span asp-validation-for="StreetAddress" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="City">City*</label>
+            <input asp-for="City" class="form-control" />
+            <span asp-validation-for="City" class="text-danger"></span>
+        </div>
+
+    </div>
+
+    <div class="row login-form-container formAlign">
+        <div class="form-group ">
+            <label asp-for="Region">Province*</label>
+            <select asp-for="Region" class="form-control">
+                <option value="">-- Select Province --</option>
+                <option value="AB">Alberta</option>
+                <option value="BC">British Columbia</option>
+                <option value="MB">Manitoba</option>
+                <option value="NB">New Brunswick</option>
+                <option value="NL">Newfoundland and Labrador</option>
+                <option value="NS">Nova Scotia</option>
+                <option value="ON">Ontario</option>
+                <option value="PE">Prince Edward Island</option>
+                <option value="QC">Quebec</option>
+                <option value="SK">Saskatchewan</option>
+                <option value="NT">Northwest Territories</option>
+                <option value="NU">Nunavut</option>
+                <option value="YT">Yukon</option>
+            </select>
+            <span asp-validation-for="Region" class="text-danger"></span>
+        </div>
+
+        <div class="row login-form-container formAlign">
+            <label asp-for="Country">Country*</label>
+            <select asp-for="Country" class="form-control">
+                <option value="Canada">Canada</option>
+            </select>
+            <span asp-validation-for="Country" class="text-danger"></span>
+        </div>
+
+        <div class="row login-form-container formAlign">
+            <label asp-for="ZipOrPostalCode">Postal Code*</label>
+            <input asp-for="ZipOrPostalCode" class="form-control" />
+            <span asp-validation-for="ZipOrPostalCode" class="text-danger"></span>
+        </div>
+    </div>
+
+    <br />
+
+    <button type="submit" class="btn btn-primary">Save Address</button>
+    <a asp-controller="Account" asp-action="GetUserProfile" asp-route-username="@User.Identity.Name" class="btn btn-primary">Cancel</a>
+</form>
+<br />
+<br />

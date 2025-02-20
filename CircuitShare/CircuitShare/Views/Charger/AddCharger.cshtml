@@ -1,0 +1,50 @@
+﻿@model CircuitShare.Entities.Charger
+
+@{
+    ViewData["Title"] = "AddCharger";
+}
+
+<h1 class="TitleStyle" style="font-size: 50px; text-decoration: underline">Add Charger</h1>
+
+<div class="road-container">
+    <div class="lane"></div>
+    <div class="middle-line"></div>
+    <div class="lane"></div>
+</div>
+
+
+<div class="row login-form-container formAlign">
+    <div class="">
+        <form asp-controller="Charger" asp-action="AddNewCharger" method="post" enctype="application/x-www-form-urlencoded">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HourlyRate" class="control-label">Hourly Rate</label>
+                <input asp-for="HourlyRate" class="form-control" />
+                <span asp-validation-for="HourlyRate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a style ="color: snow" asp-controller="Account" asp-action="GetAdminPanel">Back to Admin Panel</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

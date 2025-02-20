@@ -1,0 +1,45 @@
+﻿@model ChargerViewModel
+
+
+<div class="text-center">
+	<h1 class="display-4" style="text-decoration: underline; font-weight: bold">Check out our chargers!</h1>
+
+	<div class="charger-container">
+		@{
+			if(Model.Chargers.Count > 0){
+
+				<a asp-controller="Charger" asp-action="GetUserAddChargerRequest" asp-route-username="@User.Identity.Name" class="btn btn-primary btn-sm" class="text-primary" style="color: black;">Add A Charger</a>
+
+				foreach (var charger in Model.Chargers)
+				{
+					<div class="charger-card">
+						<h3>@charger.Name</h3>
+
+						<p><a style="color: black" asp-controller="Charger" asp-action="GetUserEditChargerRequest" asp-route-username="@User.Identity.Name" asp-route-chargerId="@charger.ChargerId">Edit</a></p>
+
+						<form asp-controller="Charger" asp-action="UserDeleteCharger" asp-route-id="@charger.ChargerId" method="post" style="display:inline;">
+							<button type="submit" class="btn btn-link" onclick="return confirm('Are you sure you want to delete this charger?');">Delete</button>
+						</form>
+
+						<p>$@charger.HourlyRate per hour</p>
+						<p>@charger.Description</p>
+					</div>
+
+					<div class="road-container">
+						<div class="lane"></div>
+						<div class="middle-line"></div>
+						<div class="lane"></div>
+					</div>
+
+
+				}
+			}
+			else
+			{
+				<h3>You have no chargers yet. Add your first charger to join our cool new club!!!</h3>
+				<a asp-controller="Charger" asp-action="GetUserAddChargerRequest" asp-route-username="@User.Identity.Name" class="btn btn-primary btn-sm" class="text-primary" style="color: black;">Add Your First Charger!!!</a>
+			}
+			
+		}
+	</div>
+</div>
